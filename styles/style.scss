@@ -1,0 +1,253 @@
+@import "./variables";
+@import "./mixins";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  padding: 1rem 0;
+  .content {
+    @include content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      h1 {
+        color: black;
+      }
+    }
+
+    button.btn-menu {
+      border: 0;
+      background-color: transparent;
+      width: 45px;
+      height: 45px;
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      span {
+        width: 100%;
+        height: 5px;
+        background-color: black;
+      }
+    }
+
+    nav {
+      ul.nav-list {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        li {
+          a {
+            color: black;
+            transition: color 400ms ease;
+            &:hover {
+              color: $color-primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+main {
+  section.principal {
+    .content {
+      @include content;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .card-text {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1rem;
+        h2.title {
+          position: relative;
+          font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+          font-size: 55px;
+          line-height: 70px;
+          letter-spacing: 10px;
+          width: 75%;
+
+          &::before {
+            @include blueRectangle(214px, 38px);
+          }
+        }
+
+        p.description {
+          color: $color-primary;
+          line-height: 30px;
+        }
+
+        .buttons {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+          a.btn-login {
+            text-decoration: none;
+            background-color: $bg-primary;
+            border: 1px solid black;
+            border-radius: 5px;
+            color: black;
+            height: 60px;
+            width: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background 400ms ease;
+            &:hover {
+              background-color: #03d5fa;
+            }
+          }
+        }
+      }
+
+      img.img-principal {
+        display: block;
+        width: 50%;
+      }
+    }
+  }
+
+  section.services {
+    padding: 2rem 0;
+    .content {
+      @include content;
+      ol {
+        width: 100%;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        li.card {
+          width: 30%;
+          min-height: 230px;
+          background-color: $bg-secondary;
+          padding: 15px;
+          border-radius: 5px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 1rem;
+
+          span.number {
+            @include circle(1px solid);
+          }
+
+          h3.title {
+            position: relative;
+            font-weight: 700;
+            text-align: start;
+            z-index: 2;
+
+            &::before {
+              @include blueRectangle(20px, 12px);
+            }
+          }
+
+          p.description {
+            font-weight: 400;
+            text-align: start;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .content {
+    @include content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    small {
+      font-size: 0.8rem;
+    }
+
+    ul.rrss {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      li {
+        a {
+          @include circle(none);
+          transition: background 400ms ease;
+          img {
+            width: auto;
+            height: 30px;
+          }
+
+          &:hover {
+            background-color: $bg-primary;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    .content {
+      button.btn-menu {
+        display: flex;
+      }
+      nav {
+        display: none;
+      }
+    }
+  }
+
+  main {
+    section.principal {
+      .content {
+        .card-text {
+          width: 100%;
+
+          h2.title {
+            width: 100%;
+          }
+        }
+
+        img.img-principal {
+          display: none;
+        }
+      }
+    }
+
+    section.services {
+      .content {
+        ol {
+          gap: 1rem;
+          li.card {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@mixin content {
+  width: 80%;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    width: 85%;
+  }
+}
+
+@mixin circle($border) {
+  border-radius: 50%;
+  border: $border;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -6px 0px 2px $bg-primary;
+}
+
+@mixin blueRectangle($width, $height) {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $bg-primary;
+  width: $width;
+  height: $height;
+  z-index: -1;
+}

@@ -1,0 +1,260 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  padding: 1rem 0;
+}
+header .content {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  header .content {
+    width: 85%;
+  }
+}
+header .content a {
+  text-decoration: none;
+}
+header .content a h1 {
+  color: black;
+}
+header .content button.btn-menu {
+  border: 0;
+  background-color: transparent;
+  width: 45px;
+  height: 45px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+header .content button.btn-menu span {
+  width: 100%;
+  height: 5px;
+  background-color: black;
+}
+header .content nav ul.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+header .content nav ul.nav-list li a {
+  color: black;
+  transition: color 400ms ease;
+}
+header .content nav ul.nav-list li a:hover {
+  color: #8b8b8b;
+}
+
+main section.principal .content {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  main section.principal .content {
+    width: 85%;
+  }
+}
+main section.principal .content .card-text {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+main section.principal .content .card-text h2.title {
+  position: relative;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 55px;
+  line-height: 70px;
+  letter-spacing: 10px;
+  width: 75%;
+}
+main section.principal .content .card-text h2.title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #03faee;
+  width: 214px;
+  height: 38px;
+  z-index: -1;
+}
+main section.principal .content .card-text p.description {
+  color: #8b8b8b;
+  line-height: 30px;
+}
+main section.principal .content .card-text .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+main section.principal .content .card-text .buttons a.btn-login {
+  text-decoration: none;
+  background-color: #03faee;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: black;
+  height: 60px;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 400ms ease;
+}
+main section.principal .content .card-text .buttons a.btn-login:hover {
+  background-color: #03d5fa;
+}
+main section.principal .content img.img-principal {
+  display: block;
+  width: 50%;
+}
+main section.services {
+  padding: 2rem 0;
+}
+main section.services .content {
+  width: 80%;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  main section.services .content {
+    width: 85%;
+  }
+}
+main section.services .content ol {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+main section.services .content ol li.card {
+  width: 30%;
+  min-height: 230px;
+  background-color: #f8f8f8;
+  padding: 15px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+main section.services .content ol li.card span.number {
+  border-radius: 50%;
+  border: 1px solid;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -6px 0px 2px #03faee;
+}
+main section.services .content ol li.card h3.title {
+  position: relative;
+  font-weight: 700;
+  text-align: start;
+  z-index: 2;
+}
+main section.services .content ol li.card h3.title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #03faee;
+  width: 20px;
+  height: 12px;
+  z-index: -1;
+}
+main section.services .content ol li.card p.description {
+  font-weight: 400;
+  text-align: start;
+}
+
+footer {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .content {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  footer .content {
+    width: 85%;
+  }
+}
+footer .content small {
+  font-size: 0.8rem;
+}
+footer .content ul.rrss {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+footer .content ul.rrss li a {
+  border-radius: 50%;
+  border: none;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -6px 0px 2px #03faee;
+  transition: background 400ms ease;
+}
+footer .content ul.rrss li a img {
+  width: auto;
+  height: 30px;
+}
+footer .content ul.rrss li a:hover {
+  background-color: #03faee;
+}
+
+@media (max-width: 768px) {
+  header .content button.btn-menu {
+    display: flex;
+  }
+  header .content nav {
+    display: none;
+  }
+  main section.principal .content .card-text {
+    width: 100%;
+  }
+  main section.principal .content .card-text h2.title {
+    width: 100%;
+  }
+  main section.principal .content img.img-principal {
+    display: none;
+  }
+  main section.services .content ol {
+    gap: 1rem;
+  }
+  main section.services .content ol li.card {
+    width: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */
